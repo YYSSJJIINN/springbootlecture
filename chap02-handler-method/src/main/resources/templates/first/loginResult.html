@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 결과</title>
+</head>
+<body>
+    <h1>Session에 담긴 값 확인하기:</h1>
+
+    <h3 th:text="|${ session.myId }님 환영합니다!|"></h3>
+    <h3 th:text="|${ session.myId2 }님 환영합니다!|"></h3>
+<!--    <h3 th:text="|${ session.get(myId) }님 환영합니다!|"></h3>-->
+    <div>
+        <button onclick="location.href='logout1'">로그아웃 1</button>
+        <button onclick="location.href='logout2'">로그아웃 2</button>
+    </div>
+</body>
+</html>
