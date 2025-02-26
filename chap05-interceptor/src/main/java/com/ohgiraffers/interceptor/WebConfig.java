@@ -20,7 +20,21 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(new StopwatchInterceptor())
-                .addPathPatterns("/stopwatch");
+        /* 전체 요청 중, 요청 URL의 '/stopwatch' 패턴만 인터셉터가 가로채도록 설정 */
+//        registry.addInterceptor(new StopwatchInterceptor(new MenuService()))
+//                .addPathPatterns("/stopwatch");
+
+        /* 만약 모든 요청에 대해서 인터셉터를 적용하고 싶다면 아래와 같이 적용할 수 있다.
+         * 정적 리소스 또는 에러 포워딩 경로 등은 excludedPathPatterns 메서드를 통해 제외해주면 된다.
+         * */
+        registry.addInterceptor(stopwatchInterceptor)
+                /* 일단 모든 경로에 대해 인터셉터를 동작시키도록 한다. */
+                .addPathPatterns("/*")
+                /* static 하위의 정적 리소스는 인터셉터가 적용되지 않도록 한다. */
+                .excludePathPatterns("/css/**")
+                .excludePathPatterns("/images/**")
+                .excludePathPatterns("/js/**")
+                /* /error 로 포워딩 되는 경로도 제외해주어야 한다. */
+                .excludePathPatterns("/error");
     }
 }

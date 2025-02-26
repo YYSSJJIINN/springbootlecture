@@ -9,6 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Component
 public class StopwatchInterceptor implements HandlerInterceptor {
 
+    private final MenuService menuService;
+
+    public StopwatchInterceptor(MenuService menuService) {
+        this.menuService = menuService;
+    }
+
     /* 전처리 메서드 */
     // Handler Interceptor에서 Handler로 출발하기 직전
     @Override
@@ -50,6 +56,7 @@ public class StopwatchInterceptor implements HandlerInterceptor {
 
         System.out.println("[StopwatchInterceptor] afterCompletion 호출됨...");
 
-        HandlerInterceptor.super.afterCompletion(request, response, handler, ex);
+        /* 인터셉터는 요청에 대한 응답이 반환된 이후에도 추가적인 로직을 수행할 수 있다. */
+        menuService.testMethod();
     }
 }
