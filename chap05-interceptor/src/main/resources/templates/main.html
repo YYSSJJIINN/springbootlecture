@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+        Spring interceptor:
+        Spring 프레임워크에서 제공하는 기능 중 하나로, 클라이언트의 요청을 가로채서 처리하는 역할을 수행한다.
+        이를 통해 공통적인 로직(로깅, 성능 측정, 캐싱 등)을 처리하거나 보안(인증, 권한 등) 등의 목적으로
+        특정 조건을 검사하고 해당 요청을 처리하거나 무시할 수 있다.
+        Interceptor는 특정 요청 URL에만 적용되도록 매핑할 수 있다는 점이 서블릿의 필터와 개념이 유사하다.
+        하지만 필터와 달리 interceptor는 Spring Web Application Context에 구성하기 때문에
+        Spring Container의 기능을 자유롭게 활용할 수 있으며, 그 내부에서 관리되는 bean들을 자유롭게 참조할 수 있다.
+    -->
+    <h1>Spring interceptor를 이용해 controller 요청 가로채기</h1>
+    <h3>핸들러 인터셉터를 이용한 요청 처리 경과시간 확인해보기</h3>
+    <button onclick="location.href='stopwatch'">수행 시간 확인</button>
+</body>
+</html>
