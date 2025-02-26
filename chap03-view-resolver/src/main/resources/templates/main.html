@@ -26,5 +26,40 @@
 
     <h3>문자열로 뷰 이름 반환하면서 flashAttribute 추가 하기</h3>
     <button onclick="location.href='string-redirect-attr'">문자열로 뷰 이름 반환하여 리다이렉트 & flashAttr 사용하기</button>
+    <script>
+        <!--/*
+        아래 코드는 Thymeleaf 템플릿 엔진을 사용하여 서버에서 생성된 값을 JavaScript로 전달하는 방식이다.
+        '[[]]' -> Thymeleaf에서 JavaScript 코드 내부에서 값을 동적으로 대체할 때 사용하는 문법이다.
+        '${}'  -> Spring MVC에서 Model 데이터를 Thymeleaf 템플릿에서 참조하는 문법이다.
+        -------------------------------------------------------------------------------------------------
+        예를 들어 서버측에서 flashMessage1에 "Hello world" 값을 전달했다고 가정하면
+        랜더링 결과는 아래와 같이 반영된다:
+        const falshMessage1 = 'Hello world';
+        따라서 브라우저 랜더링 시 최종적으로 서버 데이터가 반영된 코드가 실행된다.
+        */-->
+        const flashMessage1 = `[[${ flashMessage1 }]]`;
+
+        console.log('RedirectAttributes에서 꺼낸 메세지: ', flashMessage1);
+
+        if(flashMessage1) alert(flashMessage1);
+    </script>
+
+    <hr>
+
+    <h3>ModelAndView로 뷰 이름 지정해서 반환하기</h3>
+    <button onclick="location.href='modelandview'">ModelAndView로 뷰 이름 지정해서 반환받기</button>
+
+    <h3>ModelAndView로 redirect 하기</h3>
+    <button onclick="location.href='modelandview-redirect'">ModelAndView로 뷰 이름 반환하여 리다이렉트</button>
+
+    <h3>ModelAndView로 뷰 이름 반환하면서 flashAttribute 추가 하기</h3>
+    <button onclick="location.href='modelandview-redirect-attr'">ModelAndView로 뷰 이름 반환하여 리다이렉트</button>
+    <script>
+        const flashMessage2 = '[[${ flashMessage2 }]]';
+        console.log(flashMessage2);
+        if(flashMessage2) {
+            alert(flashMessage2);
+        }
+    </script>
 </body>
 </html>
