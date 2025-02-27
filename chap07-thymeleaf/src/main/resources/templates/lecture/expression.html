@@ -3,82 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{ /css/common.css }">
 </head>
 <body>
-    <h1>1. 표현식(expression)</h1>
+<h1>1. 표현식(expression)</h1>
 
-    <h2>주석</h2>
-    <!--
-            설명. 주석의 종류
-             - parser-level 주석
-              : 정적인 페이지에서는 주석으로 있다가 thymeleaf가 처리될 때 제거되어 클라이언트에게 노출되지 않는다는 장점이 있다.
-             - prototype-only 주석
-              : 정적페이지에서 주석으로 있다가 thymeleaf 처리 후에는 화면에 보여지게 되는 주석
-        -->
-    <ul>
-        <li>parser-level 주석</li>
-        <!--/* 주석내용 */-->
-        <li>prototype-only 주석</li>
-        <!--/*/ 주석내용 /*/-->
-    </ul>
+<h2>주석</h2>
+<!--
+    설명. 주석의 종류
+     - parser-level 주석
+      : 정적인 페이지에서는 주석으로 있다가 thymeleaf가 처리될 때 제거되어 클라이언트에게 노출되지 않는다는 장점이 있다.
+     - prototype-only 주석
+      : 정적페이지에서 주석으로 있다가 thymeleaf 처리 후에는 화면에 보여지게 되는 주석
+-->
+<ul>
+    <li>parser-level 주석</li>
+    <!--/* 주석내용 */-->
+    <li>prototype-only 주석</li>
+    <!--/*/ 주석내용 /*/-->
+</ul>
 
-    <!--
-        설명. 제공되는 표현식 종류
-         변수 표현식(Variable Expressions): ${...}
-         선택 변수식(Selection Variable Expressions): *{...}
-         메시지 표현식(Message Expressions): #{...}
-         링크 표현식(Link URL Expressions): @{...}
-         조각 표현식(Fragment Expressions): ~{...}
-         인라인 표현식(Inline Expressions): [[...]] [(...)]
+<!--
+    설명. 제공되는 표현식 종류
+     변수 표현식(Variable Expressions): ${...}
+     선택 변수식(Selection Variable Expressions): *{...}
+     메시지 표현식(Message Expressions): #{...}
+     링크 표현식(Link URL Expressions): @{...}
+     조각 표현식(Fragment Expressions): ~{...}
+     인라인 표현식(Inline Expressions): [[...]] [(...)]
 
-        설명. 아래에서는 대표적으로 자주 사용되는 것들 위주로 다룰 것이다.
-     -->
-    <!--
-        설명. parameter로 넘어온 경우는 param, session attribute일 경우는 session,
-         model에 담겨 온 경우는 따로 적지 않음(request라고 쓰면 오히려 에러가 발생하니 주의)
-    -->
-    <h2>표현식1 - 변수 표현식 ${...}</h2>
-    <p th:text="${ param.title }"></p>
-    <p th:text="${ param.no[0]}"></p>
-    <p th:text="${ param.no[1]}"></p>
-    <!-- 아래처럼 존재하지 않는 파라미터를 가져오려고 하면 무시하는 것이 아니라 에러를 발생시킴 -->
-    <!-- <p th:text="${ param.no[2]}"></p> -->
+    설명. 아래에서는 대표적으로 자주 사용되는 것들 위주로 다룰 것이다.
+ -->
+<!--
+    설명. parameter로 넘어온 경우는 param, session attribute일 경우는 session,
+     model에 담겨 온 경우는 따로 적지 않음(request라고 쓰면 오히려 에러가 발생하니 주의)
+-->
+<h2>표현식1 - 변수 표현식 ${...}</h2>
+<p th:text="${ param.title }"></p>
+<p th:text="${ param.no[0] }"></p>
+<p th:text="${ param.no[1] }"></p>
+<!-- 아래처럼 존재하지 않는 파라미터를 가져오려고 하면 무시하는 것이 아니라 에러를 발생시킴 -->
+<!--<p th:text="${ param.no[2] }"></p>-->
 
-    <h2>표현식2 - 메세지 표현식 #{...}</h2>
-    <!--
-        설명. resources 폴더 하위에 messages.properties라는 외부 리소스를 만들어 읽어오자.
-         (다른 곳에 다른 이름으로 작성하면 안됨)
-    -->
-    <p th:text="#{message.value}"></p>
+<h2>표현식2 - 메시지 표현식 #{...}</h2>
+<!--
+    설명. resources 폴더 하위에 messages.properties라는 외부 리소스를 만들어 읽어오자.
+     (다른 곳에 다른 이름으로 작성하면 안됨)
+-->
+<p th:text="#{ message.value }"></p>
 
-    <h3>표현식3 - 링크 표현식 @{...}</h3>
-    <a th:href="@{ / }">메인 화면으로 가라...</a>
+<h3>표현식3 - 링크 표현식 @{...}</h3>
+<a th:href="@{ / }">메인 화면으로 가라...</a>
 
-    <h2>표현식4 - 선택 변수 표현식 *{...}</h2>
-    <!-- 아래와 같이 뽑아 쓸 수 있다는 점의 핵심이다. -->
-    <p th:text="${ member }"></p>
-    <p th:text="${ member.name }"></p>
-    <p th:text="${ member.getName() }"></p>
+<h2>표현식4 - 선택 변수 표현식 *{...}</h2>
+<!-- 아래와 같이 뽑아쓸 수 있다는 점의 핵심이다. -->
+<p th:text="${ member }"></p>
+<p th:text="${ member.name }"></p>
+<p th:text="${ member.getName() }"></p>
 
-    <p th:object="${ member }" th:text="*{name}"></p>
-    <p th:object="${ member }" th:text="*{getName()}"></p>
-    <div th:object="${ member }">
-        <p th:text="*{ age }"></p>
-    </div>
+<p th:object="${ member }" th:text="*{ name }"></p>
+<p th:object="${ member }" th:text="*{ getName() }"></p>
+<div th:object="${ member }">
+    <p th:text="*{ age }"></p>
+</div>
 
-    <h2>표현식5 - 인라인 표현식 [[...]] 또는 [(...)]</h2>
-    <p th:inline="none">
-        변수 표현식의 값을 html에 직접 표시하기 위해서 th:text와 같은 [[...]]를 사용하고 th:utext와 같은 [(...)]를 사용할 수 있다.
-        대괄호로 묶어 이와 같이 변수 표현식의 값을 가져오는 것을 인라인모드라고 하며 인라인 모드는 text모드와 자바스크립트 모드가 있다.
-        우리는 변수 표현식의 값을 자바스크립트에서 쓰는 것이 아닌 html에서 사용하려는 것이므로
-        th:inline="text"를 태그에 속성값으로 주고 써야 하지만 th:inline="text"를 쓰지 않아도 적용된다.
+<h2>HTML 출력 - th:text, th:utext, th:value</h2>
+<p>
+    EL 태그의 값을 태그 내부의 값으로서 작성하기 위해서는 th:text 또는 th:utext를 사용할 수 있다.
+    th:text는 escape가 적용되어 태그를 단순 문자열로서 처리하지만, th:utext는 excape가 적용되지 않아
+    태그를 태그로서 인식되어버린다.
+    th:value는 태그의 value값을 지정할 수 있다.
+</p>
+<ul>
+    <li th:text="${ hello }"></li>
+    <li th:utext="${ hello }"></li>
+    <li><input type="text" value="1+2"></li>
+    <li><input type="text" th:value="1+2"></li>
+</ul>
 
-        반면 인라인 모드를 적용하지 않으려면 th:inline="none"을 속성값으로 주면 변수 표현식의 값이
-        인라인모드로 사용하지 않아([[]] 또는 [()]를 인식하지 않음) 단순 문자열로 처리할 수 있다.
+<h2>표현식5 - 인라인 표현식 [[...]] 또는 [(...)]</h2>
+<p th:inline="none">
+    변수 표현식의 값을 html에 직접 표시하기 위해서 th:text와 같은 [[...]]를 사용하고 th:utext와 같은 [(...)]를 사용할 수 있다.
+    대괄호로 묶어 이와 같이 변수 표현식의 값을 가져오는 것을 인라인모드라고 하며 인라인 모드는 text모드와 자바스크립트 모드가 있다.
+    우리는 변수 표현식의 값을 자바스크립트에서 쓰는 것이 아닌 html에서 사용하려는 것이므로
+    th:inline="text"를 태그에 속성값으로 주고 써야 하지만 th:inline="text"를 쓰지 않아도 적용된다.
 
-        자바스크립트에서 사용하려면 th:inline="javascript"를 태그에 속성값으로 주고 써야 하지만
-        역시나 th:inline="javascript"를 쓰지 않아도 적용된다.
-    </p>
+    반면 인라인 모드를 적용하지 않으려면 th:inline="none"을 속성값으로 주면 변수 표현식의 값이
+    인라인모드로 사용하지 않아([[]] 또는 [()]를 인식하지 않음) 단순 문자열로 처리할 수 있다.
+
+    자바스크립트에서 사용하려면 th:inline="javascript"를 태그에 속성값으로 주고 써야 하지만
+    역시나 th:inline="javascript"를 쓰지 않아도 적용된다.
+</p>
+<ul>
+    <li th:inline="none">[[${ hello }]]</li>
+    <li th:inline="text">[[${ hello }]]</li>
+    <li>[[${ hello }]]</li>
+    <li>[(${ hello })]</li>
+</ul>
+<script th:inline="javascript">
+    window.onload = function() {
+        console.log("화면 떳다!");
+
+        /* 정적 페이지 기준에서 아래 코드는 JavaScript 컴파일(문법) 에러가 발생한다. (리터럴 형태가 아니기 때문)
+         * 하지만, 동적 페이지에서는 정상 동작시킬 수 있다.
+         * */
+        // let hello = [[${ hello }]];
+
+        /* 이 때, 문자열로 만들어줘야 하므로 ""로 감싸주면 된다.
+         * 따라서 정적 페이지에서 더 이상 컴파일 에러는 발생하지 않는다. (문자열 리터럴 형태로 작성되기 때문)
+         * 그러나 이번에는 동적 페이지에서 에러가 발생한다.
+         * 큰 따옴표로 감싸주었기 때문에 타임리프 템플릿 엔진이 정적 페이지를 해석하고 나면 큰 따옴표가 추가되어
+         * ""[[${ hello }]]""가 되어버려 Uncaught SyntaxError가 발생한다.
+         * */
+        // let hello = "[[${ hello }]]";
+
+        /* 따라서 작은 따옴표로 감싸서 문자열 리터럴로 만들어주면 정적/동적 페이지 모두 에러가 발생하지 않는다. */
+        let hello = '[[${ hello }]]';
+
+        alert(hello);
+    };
+</script>
+
+<h2>리터럴 치환 ||</h2>
+<h3>'+'를 쓰지 않고 문자열 합치기</h3>
+<p th:object="${ member }" th:text="|name = '*{ name }'|"></p>
+<p th:object="${ member }" th:text="|age = '*{ age }'|"></p>
+<p th:object="${ member }" th:text="|gender = '*{ gender }'|"></p>
+<p th:object="${ member }" th:text="|address = '*{ address }'|"></p>
+
+<h2>th:block</h2>
+<p>
+    범위(block)를 지정하고자 할 때 사용한다.
+    th:block을 사용해 해당 범위에 변수나 객체를 적용하거나
+    조건에 해당되는지에 따라 해당 범위를 보여주거나 보여주지 않을 때 사용할 수 있다.
+</p>
+
+<p th:object="${ member }" th:text="*{ name }"></p>
+<p th:object="${ member }" th:text="*{ age }"></p>
+<p th:object="${ member }" th:text="*{ gender }"></p>
+<p th:object="${ member }" th:text="*{ address }"></p>
+
+<th:block th:object="${ member }">
+    <p th:text="*{ name }"></p>
+    <p th:text="*{ age }"></p>
+    <p th:text="*{ gender }"></p>
+    <p th:text="*{ address }"></p>
+</th:block>
 </body>
 </html>
