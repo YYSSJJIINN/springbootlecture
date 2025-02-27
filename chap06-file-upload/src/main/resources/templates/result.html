@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    리다이렉트됨
+    <h1 th:text="${ message }"></h1>
+
+    <div th:if="${ img } != null">
+        <img th:src="${ img }" alt="업로드 이미지" widh="300" height="20">
+        <p th:text="${ singleFileDescription }"></p>
+    </div>
+    <div th:if="${ imgs } != null">
+        <!-- for(String img : imgs) imgs에서 하나 뽑는 것과 같은 형태다.-->
+        <div th:each="img : ${ imgs }">
+            <img th:src="${ img }" alt="업로드 이미지" width="300" height="300">
+        </div>
+        <p th:text="${ multiFileDescription}"></p>
+    </div>
+    <div th:unless="${ img } != null or ${ imgs } != null">
+        <p>보여줄게 없다... 미안하다...</p>
+    </div>
 </body>
 </html>
