@@ -1,6 +1,7 @@
 package com.ohgiraffers.thymeleaf.controller;
 
 import com.ohgiraffers.thymeleaf.model.dto.MemberDTO;
+import com.ohgiraffers.thymeleaf.model.dto.SelectCriteria;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,6 +41,15 @@ public class LectureController {
         mv.addObject("memberList", memberList);
 
         mv.setViewName("/lecture/conditional");
+
+        return mv;
+    }
+
+    @GetMapping("etc")
+    public ModelAndView etc(ModelAndView mv) {
+
+        SelectCriteria selectCriteria = new SelectCriteria(1, 10, 3);
+        mv.addObject("selectCriteria", selectCriteria);
 
         return mv;
     }
