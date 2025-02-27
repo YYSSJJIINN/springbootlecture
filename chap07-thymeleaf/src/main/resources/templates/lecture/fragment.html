@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 스타일은 끌려오는 쪽인 replace 쪽에 작성하고(왜냐면 이쪽에 적은 것이 우위대결에서 이김) -->
+    <style>
+        .header {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        the:replace는 해당 영역에 존재하는 요소를 대체하고자 하는 Fragment를 호출하여 치환하는 문법으로
+        기존에 정의되어 있던 요소를 제거하고 불러온 Fragment로 치환한다.
+        (즉, 굴러온 돌이 박힌 돌을 빼내는 격)
+    -->
+
+    <!-- 가지고 오는 쪽 이므로 replace로 보내는 쪽인 fragment와 교환해준다. -->
+    <!-- 즉, html 태그는 보내는 쪽인 th:fragment에 잘 작성해준다. -->
+    <header th:replace="~{ /common/header :: headerFragment }" class="header">
+        <h1>나는 헤더</h1>
+    </header>
+
+    <h1>4. fragment</h1>
+
+</body>
+</html>
