@@ -51,6 +51,8 @@ public class LectureController {
         SelectCriteria selectCriteria = new SelectCriteria(1, 10, 3);
         mv.addObject("selectCriteria", selectCriteria);
 
+        mv.setViewName("/lecture/etc");
+
         return mv;
     }
 }
