@@ -8,6 +8,12 @@
         .header {
             color: red;
         }
+        .aside {
+            color: darkgreen;
+        }
+        .footer {
+            color: darkmagenta;
+        }
     </style>
 </head>
 <body>
@@ -25,5 +31,25 @@
 
     <h1>4. fragment</h1>
 
+    <!-- fragment 호출 시, 매개 변수를 전달해서 동적으로 UI를 꾸미는 것도 가능하다. -->
+    <aside th:replace="~{ /common/aside :: asideFragment(${test1}, ${test2}) }"></aside>
+
+    <main>
+        <article>
+            <section>
+                <h1>여기가 메인이다.</h1>
+            </section>
+        </article>
+    </main>
+
+    <!--
+        th:insert는 해당 영역에 삽입하고자 하는 fragment를 삽입하는 문법으로,
+        블록 내에 정의되어 있는 내용에 th:insert로 불러온 fragment를 그대로 추가한다.
+        따라서 th:replace와 달리 중복되는 요소가 생길 수 있으므로 주의해서 사용한다.
+        (th:replace와 th:insert 구분이 필요함)
+    -->
+    <footer th:insert="~{ /common/footer :: footerFragment}">
+        <h3>나는 푸터</h3>
+    </footer>
 </body>
 </html>
