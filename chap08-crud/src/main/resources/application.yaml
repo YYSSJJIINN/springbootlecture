@@ -1,0 +1,17 @@
+# Server config
+server:
+  port: 8080
+
+# Spring Config
+spring:
+  # Driver Config
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/menudb
+    username: ohgiraffers
+    password: ohgiraffers
+
+#MyBatis Config
+mybatis:
+  #mapper 디렉
+  mapper-locations: mapper/**/*.xml

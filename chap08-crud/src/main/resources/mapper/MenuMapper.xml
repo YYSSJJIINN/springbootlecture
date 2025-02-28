@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.crud.menu.model.dao.MenuMapper">
+    <!-- findAllMenu가 온 곳인 MenuDTO를 입력해준다. -->
+    <resultMap id="menuResultMap" type="com.ohgiraffers.crud.menu.model.dto.MenuDTO">
+        <id property="code" column="menu_code"/>
+        <result property="name" column="menu_name"/>
+        <result property="price" column="menu_price"/>
+        <result property="categoryCode" column="category_code"/>
+        <result property="orderableStatus" column="orderable_status"/>
+    </resultMap>
+
+    <select id="findAllMenu" resultMap="menuResultMap">
+        select
+            menu_code,
+            menu_name,
+            menu_price,
+            category_code,
+            orderable_status
+        from
+            tbl_menu
+        where
+            orderable_status = 'Y'
+        order by
+            menu_code
+    </select>
+
+    <!-- 인터페이스의 메서드 이름과 id를 똑같이 맞춰줘야한다. -->
+    <!-- MenuDTO findMenuByCode(int code); 에서 반환형은 리절트맵으로 정해둠 -->
+    <select id="findMenuByCode" resultMap="menuResultMap" parameterType="_int">
+        select
+            menu_code,
+            menu_name,
+            menu_price,
+            category_code,
+            orderable_status
+        from
+            tbl_menu
+        where
+            orderable_status = 'Y' AND
+            menu_code = #{ code }
+        order by
+            menu_code
+    </select>
+
+</mapper>

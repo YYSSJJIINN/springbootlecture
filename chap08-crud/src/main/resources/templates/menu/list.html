@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- 리플레이스는 리플레이스가 적혀있는 해당 태그를 삭제하고
+        같이 언급하고 있는 소환문myHeader을 가지고 있는 줄을 불러온다. -->
+    <header th:replace="common/header :: myHeader">
+
+    </header>
+    <table>
+        <tr>
+            <th>메뉴번호</th>
+            <th>메뉴이름</th>
+            <th>메뉴가격</th>
+            <th>카테고리코드</th>
+            <th>판매상태</th>
+        </tr>
+        <!-- 여기서 m은 MenuDTO다. -->
+        <tr th:each="m : ${ menuList }">
+            <td th:text="${ m.code }"></td>
+            <!-- 하이퍼링크를 걸어주는 것이므로 변수용인 $가 아닌 @로 한다. -->
+            <td ><a th:text="${ m.name }" th:href="@{ /menu/detail/{code}(code=${m.code})}"></a></td>
+            <td th:text="${ m.price }"></td>
+            <td th:text="${ m.categoryCode }"></td>
+            <td th:text="${ m.orderableStatus }"></td>
+        </tr>
+    </table>
+    <br>
+    <!-- '/'를 선택하면 젤 처음화면으로 이동이다. -->
+    <button onclick="location.href='/'">메인으로</button>
+</body>
+</html>

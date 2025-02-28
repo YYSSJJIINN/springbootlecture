@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p th:text="${ menu }"></p>
+    <th:block th:replace="common/header :: myHeader"></th:block>
+
+    <h2>메뉴 상세 정보</h2>
+    <div>
+        <p th:text="|메뉴번호 : ${menu.code}|"></p>
+        <p th:text="|메뉴이름 : ${menu.name}|"></p>
+        <p th:text="|메뉴가격 : ${menu.price}|"></p>
+        <p th:text="|카테고리코드 : ${menu.categoryCode}|"></p>
+        <p th:text="|판매상태 : ${menu.orderableStatus}|"></p>
+    </div>
+    <button onclick="location.href='/menu/list'">목록으로</button>
+</body>
+</html>
