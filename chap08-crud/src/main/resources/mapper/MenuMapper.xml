@@ -12,6 +12,12 @@
         <result property="orderableStatus" column="orderable_status"/>
     </resultMap>
 
+    <resultMap id="categoryResultMap" type="com.ohgiraffers.crud.menu.model.dto.CategoryDTO">
+        <id property="code" column="category_code"/>
+        <result property="name" column="category_name"/>
+        <result property="refCategoryCode" column="ref_category_code"/>
+    </resultMap>
+
     <select id="findAllMenu" resultMap="menuResultMap">
         select
             menu_code,
@@ -44,5 +50,45 @@
         order by
             menu_code
     </select>
+
+    <select id="findAllCategory" resultMap="categoryResultMap">
+        select
+            category_code,
+            category_name,
+            ref_category_code
+        from
+            tbl_category
+    </select>
+
+    <!-- useGeneratedKeys 자동으로 생성되는 오토인크리먼트 사용할건가? -->
+    <insert id="registMenu" parameterType="com.ohgiraffers.crud.menu.model.dto.MenuDTO"
+            useGeneratedKeys="true" keyProperty="code">
+        INSERT INTO
+            tbl_menu
+        (
+            menu_name,
+            menu_price,
+            category_code,
+            orderable_status
+        )
+        VALUES
+            (
+                #{name},
+                #{price},
+                #{categoryCode},
+                #{orderableStatus}
+            )
+    </insert>
+    <update id="updateMenu" parameterType="com.ohgiraffers.crud.menu.model.dto.MenuDTO">
+        update
+            tbl_menu
+        set
+            menu_name = #{ name },
+            menu_price = #{ price },
+            category_code = #{ categoryCode },
+            orderable_status = #{ orderableStatus }
+        where
+            menu_code = #{ code }
+    </update>
 
 </mapper>

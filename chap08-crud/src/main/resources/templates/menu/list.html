@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script th:inline="text">
+        const successMessage = `[[${successMessage}]]`
+        if (successMessage) {
+            alert(successMessage);
+        }
+    </script>
 </head>
 <body>
     <!-- 리플레이스는 리플레이스가 적혀있는 해당 태그를 삭제하고

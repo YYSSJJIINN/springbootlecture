@@ -21,10 +21,27 @@
     </form>
 
     <script>
-        fetch("/menu/category")
+        fetch("/menu/category")     // 내부적으로 GET요청이 날라갔을 때 실행. 괄호 안에 요청 url입력
             .then(res => res.json())/* 이 곳에 서버에서 돌려받은 응답이 들어온다. */
             .then(data => {
-                console.log(daga);
+                // 주의! 여기서 data는 딱 1번만 사용할 수 있음!!
+                console.log(data);      // 비동기 요청에 대한 응답 확인용(확인했으면 주석처리하기)
+
+                const $categoryCode = document.getElementById("categoryCode");
+
+                // 각 카테고리 데이터를 순회
+                for(let index in data) {
+
+                    // 새로운 <option> 엘리먼트 생성
+                    const $option = document.createElement("option");
+                    // <option> 엘리먼트의 값을 조회해온 카테고리 코드로 설정
+                    $option.value = data[index].code;
+                    // <option> 엘리먼트의 텍스트 노드를 조회해온 카테고리 코드로 설정
+                    $option.textContent = data[index].name;
+
+                    // 완성된 <option> 엘리먼트를 select 엘리먼트의 자식으로 추가
+                    $categoryCode.appendChild($option);
+                }
             });
     </script>
 </body>
