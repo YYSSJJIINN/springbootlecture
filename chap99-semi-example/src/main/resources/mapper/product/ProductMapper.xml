@@ -16,6 +16,7 @@
     </resultMap>
 
     <!-- 상품 관련 공통 컬럼 -->
+    <!-- 와일드카드를 변수화 한 부분. ㅂ녀수 이름은 roductColumns이거라고 생각하면 된다.-->
     <sql id="productColumns">
         p.product_code,
         p.product_name,
@@ -29,7 +30,8 @@
 
     <!-- 전체 상품 목록 조회 -->
     <select id="findAllProducts" resultMap="productResultMap">
-        SELECT 
+        SELECT
+            /* 이 부분이 변수화한 걸 사용하는 부분이다. */
             <include refid="productColumns"/>
         FROM tbl_product p
         WHERE p.product_orderable = 'Y'
