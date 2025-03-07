@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <!-- 서브 네비게이션 fragment -->
+    <div th:fragment="subnav">
+        <div class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a th:href="@{/member/mypage}" 
+                      th:class="${currentPage == 'mypage' ? 'active-menu' : ''}">회원 정보</a></li>
+                <li><a th:href="@{/order/list}" 
+                      th:class="${currentPage == 'order' ? 'active-menu' : ''}">결제 정보</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 

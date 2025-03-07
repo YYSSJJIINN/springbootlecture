@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <header th:fragment="header" class="header">
+        <div class="header-top">
+            <div class="logo-title">
+                <a th:href="@{/}" class="logo">
+                    <img th:src="@{/image/logo/owl-ohgiraffers-v2.png}" alt="오지라퍼스 로고">
+                </a>
+                <h1>WELCOME TO OHGIRAFFERS RESTAURANT</h1>
+            </div>
+            
+            <div class="user-menu">
+                <th:block sec:authorize="isAnonymous()">
+                    <a th:href="@{/auth/login}">로그인</a>
+                    <a th:href="@{/member/signup}">회원가입</a>
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+					<span th:text="|${ #authentication.name } 님 환영합니다.|"></span>
+                    <a th:href="@{/member/mypage}">마이페이지</a>
+                    <form th:action="@{/auth/logout}" method="post" style="display: inline;">
+                        <button type="submit">로그아웃</button>
+                    </form>
+                </th:block>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <form class="search-box" th:action="@{/product/search}" method="get">
+                <input type="text" name="keyword" placeholder="상품을 검색하세요">
+                <button type="submit">검색</button>
+            </form>
+        </div>
+
+        <nav class="nav-menu">
+            <a th:href="@{/product/all}">모든음식</a>
+            <a th:href="@{/product/category/food}">식사</a>
+            <a th:href="@{/product/category/dessert}">디저트</a>
+            <a th:href="@{/product/category/drink}">음료</a>
+            <a th:href="@{/product/admin/list}" sec:authorize="hasRole('ADMIN')">상품관리</a>
+        </nav>
+    </header>
+</body>
+</html>

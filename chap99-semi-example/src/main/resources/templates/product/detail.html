@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 상세</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/order.css">
+</head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    
+    <div class="product-detail">
+        <div class="product-image">
+            <img th:src="${product.productImageUrl}" th:alt="${product.productName}">
+        </div>
+        
+        <div class="product-info">
+            <h2 th:text="${product.productName}">상품명</h2>
+            <p class="description" th:text="${product.productDescription}">상품 설명</p>
+            <p class="price" th:text="${#numbers.formatDecimal(product.productPrice, 0, 'COMMA', 0, 'POINT')} + '원'">가격</p>
+            <p class="stock" th:text="'재고: ' + ${product.productStock} + '개'">재고</p>
+            
+            <div th:if="${message}" th:text="${message}" 
+                 th:class="${'message ' + (messageType ?: 'error')}"></div>
+            
+            <form th:if="${product.productStock > 0}" 
+                  th:action="@{/order/create}" 
+                  method="post" 
+                  class="order-form">
+                <input type="hidden" name="productCode" th:value="${product.productCode}">
+                
+                <div class="form-group">
+                    <label for="orderAmount">주문수량</label>
+                    <input type="number" id="orderAmount" name="orderAmount" 
+                           min="1" th:max="${product.productStock}" value="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderReceiver">받는분</label>
+                    <input type="text" id="orderReceiver" name="orderReceiver" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderPhone">연락처</label>
+                    <input type="tel" id="orderPhone" name="orderPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderEmail">이메일</label>
+                    <input type="email" id="orderEmail" name="orderEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderAddress">배송주소</label>
+                    <input type="text" id="orderAddress" name="orderAddress" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">주문하기</button>
+            </form>
+            
+            <div th:if="${product.productStock <= 0}" class="sold-out">
+                품절된 상품입니다.
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html> 

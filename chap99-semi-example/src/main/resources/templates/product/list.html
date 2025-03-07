@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 목록</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+<body>
+    <div th:replace="~{fragments/header :: header}"></div>
+    
+    <div class="content">
+        <div class="menu-grid">
+            <div th:each="product : ${products}" class="menu-item">
+                <a th:href="@{'/product/detail/' + ${product.productCode}}">
+                    <img th:src="${product.productImageUrl}" th:alt="${product.productName}">
+                    <h3 th:text="${product.productName}">상품명</h3>
+                    <p th:text="${product.productDescription}">상품 설명</p>
+                    <p class="price" th:text="${#numbers.formatDecimal(product.productPrice, 0, 'COMMA', 0, 'POINT')} + '원'">가격</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="pagination" th:if="${pagenation != null}">
+            <a th:if="${pagenation.hasPrevious}" 
+               th:href="@{${currentUrl}(page=${pagenation.page - 1})}"
+               class="prev">&laquo; 이전</a>
+               
+            <th:block th:each="pageNum : ${#numbers.sequence(pagenation.startPage, pagenation.endPage)}">
+                <a th:href="@{${currentUrl}(page=${pageNum})}"
+                   th:text="${pageNum}"
+                   th:class="${pageNum == pagenation.page ? 'active' : ''}"></a>
+            </th:block>
+            
+            <a th:if="${pagenation.hasNext}"
+               th:href="@{${currentUrl}(page=${pagenation.page + 1})}"
+               class="next">다음 &raquo;</a>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html> 

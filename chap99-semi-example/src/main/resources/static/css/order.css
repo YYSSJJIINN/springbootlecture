@@ -1,0 +1,75 @@
+/* 주문 목록 */
+.order-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.order-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-list th, 
+.order-list td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.order-list th {
+    background-color: #f8f9fa;
+}
+
+.order-date {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.order-amount {
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.order-item {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+/* 주문 폼 */
+.order-form {
+    margin-top: 20px;
+}
+
+/* 주문 상태 */
+.order-status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* 주문 상세 정보 */
+.order-details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* 주문 폼 스타일 추가 */
+.order-form input[type="number"] {
+    width: 100px;
+}
+
+.sold-out {
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    color: #dc3545;
+    border-radius: 4px;
+    margin-top: 20px;
+}

@@ -1,0 +1,56 @@
+/* 로그인/회원가입 폼 컨테이너 */
+.login-form,
+.signup-form {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* 폼 그룹 */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* 버튼 */
+.auth-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    background-color: #e9ecef;
+}
+
+/* 회원가입 완료 페이지 */
+.complete-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+.button-group a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 5px;
+}

@@ -1,0 +1,59 @@
+## server config
+server:
+  port: 8080
+
+## driver config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ohgi_restaurant
+    username: ohgiraffers
+    password: ohgiraffers
+  web:
+    resources:
+      static-locations: classpath:/static/
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+## mybatis config
+mybatis:
+  mapper-locations: mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.ohgiraffers.semi
+
+# -------------------------------------------------------------------------------------------------------------
+# 로깅 레벨은 프로그래밍에서 중요한 정보를 출력하는 기능을 제어하는 설정이다.
+# Java나 Spring Framework 등, 특정 기술에 국한되는 내용은 아니며 모든 프로그래밍 영역역에서 사용되는 개념이다.
+# 경우에 따라서 DEBUG1, DEBUG2 등과 같이 더 상세한 로깅을 위해 레벨을 조정할 수 있다.
+# 대체로 개발 중에는 DEBUG 레벨을 사용하며, 배포 및 운영 중에는 INFO 레벨을 사용한다.
+# 만약 FATAL 레벨을 설정한다면, 치명적 오류가 발생하여 시스템이 종료되는 경우에만 로그가 출력된다.
+# 그러나 해당 오류를 발생시키기 전 전조 증상을 확인할 수 있는 ERROR 및 WARN 레벨의 로그는 출력되지 않기 때문에
+# 장애 대응 시 추가적인 정보를 확인하기 어려워져 너무 낮은 레벨은 특별한 경우가 아니라면 설정하지 않는 것이 좋다.
+# -------------------------------------------------------------------------------------------------------------
+# Logging Level :
+# 0. [OFF] - 로깅 비활성화 (가장 낮낮은 레벨)
+# 1. [FATAL] - 치명적 오류 : 시스템이 종료되는 상황
+# 2. [ERROR] - 심각한 문제 : 애플리케이션이 정상 동작할 수 없는 경우
+# 3. [WARN] - 경고 : 주의가 필요한 상황이나 향후 문제가 발생할 가능성
+# 4. [INFO] - 일반적인 정보 : 애플리케이션의 정상적인 동작 흐름 (가장 많이 사용되는 디폴트 레벨)
+# 5. [DEBUG] - 디버깅을 위한 상세 정보 : 개발 중에 주로 사용
+# 6. [TRACE] - 매우 상세한 디버깅 정보 : 거의 모든 동작을 추적 (가장 높높은 레벨)
+# -------------------------------------------------------------------------------------------------------------
+logging:
+  level:
+    # 스프링 시큐리티 로깅 레벨
+    org.springframework.security: info
+    # 프로젝트 로깅 레벨
+    com.ohgiraffers.semi: debug
+    # 마이바티스 로깅 레벨
+    org.mybatis: info
+
+# 이미지 업로드를 위한 사용자 정의 변수 설정 (@Value 어노테이션 복습)
+image:
+  add-resource-locations: classpath:/static/
+  add-resource-handler: /**
+  image-dir: build/resources/main/static/image/product
+  image-url: /image/product/

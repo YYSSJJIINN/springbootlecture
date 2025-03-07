@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>결제 정보</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/mypage.css}">
+    <link rel="stylesheet" th:href="@{/css/order.css}">
+</head>
+<body>
+    <!-- 헤더 -->
+    <div th:replace="~{fragments/header :: header}"></div>
+
+    <div class="mypage-container">
+        <!-- 서브 네비게이션 -->
+        <div th:replace="~{fragments/subnav :: subnav}"></div>
+        
+        <!-- 메인 컨텐츠 -->
+        <div class="main-content">
+            <h2>결제 정보</h2>
+            <div class="order-list">
+                <h2>주문 내역</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>주문번호</th>
+                            <th>상품코드</th>
+                            <th>받는분</th>
+                            <th>배송주소</th>
+                            <th>주문수량</th>
+                            <th>주문일자</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="order : ${orders}">
+                            <td th:text="${order.orderCode}"></td>
+                            <td th:text="${order.productCode}"></td>
+                            <td th:text="${order.orderReceiver}"></td>
+                            <td th:text="${order.orderAddress}"></td>
+                            <td class="order-amount" th:text="${order.orderAmount} + '개'"></td>
+                            <td class="order-date" th:text="${order.orderDate}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div th:if="${message}" th:text="${message}" 
+                     style="margin-top: 20px; color: #666; text-align: center;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html> 

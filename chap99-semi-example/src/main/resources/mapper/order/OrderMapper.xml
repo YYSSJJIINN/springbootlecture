@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.semi.order.model.dao.OrderMapper">
+
+    <resultMap id="orderResultMap" type="com.ohgiraffers.semi.order.model.dto.OrderDTO">
+        <id property="orderCode" column="order_code"/>
+        <result property="productCode" column="product_code"/>
+        <result property="orderMember" column="order_member"/>
+        <result property="orderPhone" column="order_phone"/>
+        <result property="orderEmail" column="order_email"/>
+        <result property="orderReceiver" column="order_receiver"/>
+        <result property="orderAddress" column="order_address"/>
+        <result property="orderAmount" column="order_amount"/>
+        <result property="orderDate" column="order_date"/>
+    </resultMap>
+
+    <!-- 주문 관련 공통 컬럼 -->
+    <sql id="orderColumns">
+        o.order_code,
+        o.product_code,
+        o.order_member,
+        o.order_phone,
+        o.order_email,
+        o.order_receiver,
+        o.order_address,
+        o.order_amount,
+        o.order_date
+    </sql>
+
+    <select id="findOrdersByMemberCode" resultMap="orderResultMap">
+        SELECT 
+            <include refid="orderColumns"/>,
+            p.product_name,
+            p.product_price,
+            p.product_image_url
+        FROM tbl_order o
+        JOIN tbl_product p ON o.product_code = p.product_code
+        JOIN tbl_member m ON o.order_member = m.member_code
+        WHERE o.order_member = #{memberCode}
+        ORDER BY o.order_code DESC
+    </select>
+
+    <insert id="insertOrder" parameterType="com.ohgiraffers.semi.order.model.dto.OrderDTO">
+        INSERT INTO tbl_order (
+            product_code,
+            order_member,
+            order_phone,
+            order_email,
+            order_receiver,
+            order_address,
+            order_amount,
+            order_date
+        ) VALUES (
+            #{productCode},
+            #{orderMember},
+            #{orderPhone},
+            #{orderEmail},
+            #{orderReceiver},
+            #{orderAddress},
+            #{orderAmount},
+            DATE_FORMAT(NOW(), '%y/%m/%d %H:%i:%s')
+        )
+    </insert>
+
+</mapper>  

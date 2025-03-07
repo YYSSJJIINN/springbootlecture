@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.semi.member.model.dao.MemberMapper">
+
+    <resultMap id="memberResultMap" type="MemberDTO">
+        <id property="memberCode" column="member_code"/>
+        <result property="memberId" column="member_id"/>
+        <result property="memberPassword" column="member_password"/>
+        <result property="memberName" column="member_name"/>
+        <result property="memberEmail" column="member_email"/>
+        <collection property="memberRole" ofType="MemberRoleDTO">
+            <id property="memberCode" column="member_code"/>
+            <id property="authorityCode" column="authority_code"/>
+            <association property="authority" javaType="AuthorityDTO">
+                <id property="authorityCode" column="authority_code"/>
+                <result property="authorityName" column="authority_name"/>
+            </association>
+        </collection>
+    </resultMap>
+
+    <!-- 회원 관련 공통 컬럼 -->
+    <sql id="memberColumns">
+        m.member_code,
+        m.member_id,
+        m.member_password,
+        m.member_name,
+        m.member_email
+    </sql>
+
+    <select id="findByMemberId" resultMap="memberResultMap">
+        SELECT 
+            <include refid="memberColumns"/>,
+            mr.authority_code,
+            a.authority_name
+        FROM tbl_member m
+        LEFT JOIN tbl_member_role mr ON m.member_code = mr.member_code
+        LEFT JOIN tbl_authority a ON mr.authority_code = a.authority_code
+        WHERE m.member_id = #{memberId}
+    </select>
+
+    <insert id="insertMember" parameterType="MemberDTO" useGeneratedKeys="true" keyProperty="memberCode">
+        INSERT INTO tbl_member (
+            member_id,
+            member_password,
+            member_name,
+            member_email
+        ) VALUES (
+            #{memberId},
+            #{memberPassword},
+            #{memberName},
+            #{memberEmail}
+        )
+    </insert>
+
+    <insert id="insertMemberRole">
+        INSERT INTO tbl_member_role (
+            member_code,
+            authority_code
+        ) VALUES (
+            #{memberCode},
+            2
+        )
+    </insert>
+
+    <update id="updateMember">
+        UPDATE tbl_member
+        <set>
+            <if test="memberName != null">member_name = #{memberName},</if>
+            <if test="memberEmail != null">member_email = #{memberEmail}</if>
+        </set>
+        WHERE member_code = #{memberCode}
+    </update>
+
+    <update id="updateMemberPassword">
+        UPDATE tbl_member
+        SET member_password = #{memberPassword}
+        WHERE member_code = #{memberCode}
+    </update>
+
+</mapper> 
