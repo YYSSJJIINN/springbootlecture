@@ -16,7 +16,7 @@
     </resultMap>
 
     <!-- 상품 관련 공통 컬럼 -->
-    <!-- 와일드카드를 변수화 한 부분. ㅂ녀수 이름은 roductColumns이거라고 생각하면 된다.-->
+    <!-- 와일드카드를 변수화 한 부분. 변수 이름은 roductColumns이거라고 생각하면 된다.-->
     <sql id="productColumns">
         p.product_code,
         p.product_name,
@@ -79,8 +79,8 @@
             p.product_orderable = 'Y'
             <if test="keyword != null and keyword != ''">
                 AND (
-                    p.product_name LIKE CONCAT('%', #{keyword}, '%')
-                    OR p.product_description LIKE CONCAT('%', #{keyword}, '%')
+                p.product_name LIKE CONCAT('%', REPLACE(#{keyword}, ' ', ''), '%')
+                OR p.product_description LIKE CONCAT('%', REPLACE(#{keyword}, ' ', ''), '%')
                 )
             </if>
         </where>
