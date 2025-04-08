@@ -54,7 +54,7 @@ public class MemberController {
     // FormData일때는 리퀘스트파람 사용
     // JSON형식으로 문자열을 그냥 가져다줄때는 리퀘스트바디 사용
     public ResponseEntity memberInsert(@RequestBody MemberDTO dto) {
-        log.info("dto 확인 {}", dto);
+        log.debug("dto 확인 {}", dto);
         return ResponseEntity.status(HttpStatus.CREATED).body("저장 성공");
     }
 }
