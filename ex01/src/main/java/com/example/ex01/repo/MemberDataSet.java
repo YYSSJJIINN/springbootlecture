@@ -54,4 +54,24 @@ public class MemberDataSet {
         // 아니면
         return 0;
     }
+
+    public int login(String username,String password){
+        int result = -1 ;
+        for(MemberDTO d : DB){
+            if( d.getUsername().equals(username) ){
+                // 아이디가 일치하면
+                result = 1;
+                if( d.getPassword().equals(password) ){
+                    // 아이디에 이어 비밀번호까지 일치하면
+                    result = 0;
+                }
+                // 아이디와 비번 모두 일치하면 반복문을 빠져나간다.
+                break;
+            }
+        }
+        // 리턴값이 -1로 온다면 아예 처음부터 if문이 돌아가지 않은 것이므로 계정이 존재하지 않는 것이다.
+        // 리턴값이 1로 온다면 아이디는 존재하지만 비밀번호는 일치하지 않아 로그인에 실패한 것이다.
+        // 리턴값이 0으로 온다면 로그인에 성공한 것이다.
+        return result;
+    }
 }

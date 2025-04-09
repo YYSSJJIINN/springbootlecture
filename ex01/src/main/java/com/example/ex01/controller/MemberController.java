@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 // 문자열에 대한 데이터를 돌려주는 방식
 @RestController
@@ -137,6 +138,27 @@ public class MemberController {
         if(result == 1)
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("해당하는 id가 존재하지 않습니다.");
+    }
 
+    @PostMapping("/mem/login1")
+    public ResponseEntity login1(@RequestBody Map<String, String> map) {
+        log.debug("login map : {}", map);
+        int result = ms.login(map.get("username"), map.get("password"));
+        if( result == 0 )
+            return ResponseEntity.status(HttpStatus.OK).body("로그인이 성공했습니다.");
+        else if( result == 1 )
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("일치하지 않습니다.");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("존재하지 않는 id 입니다.");
+    }
+
+    @PostMapping("/mem/login")
+    public ResponseEntity login(@ModelAttribute MemberDTO dto) {
+        log.debug("login dto : {}", dto);
+        int result = ms.login(dto.getUsername(), dto.getPassword());
+        if( result == 0 )
+            return ResponseEntity.status(HttpStatus.OK).body("성공");
+        else if( result == 1)
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("비번틀림");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("id없음");
     }
 }
