@@ -1,116 +1,338 @@
-2025-04-08T16:51:15.775+09:00  INFO 11356 --- [ex01] [main] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 11356 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
-2025-04-08T16:51:15.778+09:00  INFO 11356 --- [ex01] [main] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
-2025-04-08T16:51:16.932+09:00  INFO 11356 --- [ex01] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-08T16:51:16.949+09:00  INFO 11356 --- [ex01] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-08T16:51:16.949+09:00  INFO 11356 --- [ex01] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-08T16:51:17.010+09:00  INFO 11356 --- [ex01] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-08T16:51:17.011+09:00  INFO 11356 --- [ex01] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1157 ms
-2025-04-08T16:51:17.548+09:00  INFO 11356 --- [ex01] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-08T16:51:17.557+09:00  INFO 11356 --- [ex01] [main] com.example.ex01.Ex01Application         : Started Ex01Application in 2.753 seconds (process running for 3.925)
-2025-04-08T16:51:23.620+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-08T16:51:23.621+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-08T16:51:23.623+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-04-08T16:51:23.701+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : info execute
-2025-04-08T16:51:23.701+09:00  WARN 11356 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : warn execute
-2025-04-08T16:51:23.702+09:00 ERROR 11356 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : error execute
-2025-04-08T16:53:06.684+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : info execute
-2025-04-08T16:53:06.685+09:00  WARN 11356 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : warn execute
-2025-04-08T16:53:06.687+09:00 ERROR 11356 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : error execute
-2025-04-08T16:57:09.948+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : info execute
-2025-04-08T16:57:09.948+09:00  WARN 11356 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : warn execute
-2025-04-08T16:57:09.948+09:00 ERROR 11356 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : error execute
-2025-04-08T17:01:15.096+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : info execute
-2025-04-08T17:01:15.096+09:00  WARN 11356 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : warn execute
-2025-04-08T17:01:15.096+09:00 ERROR 11356 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : error execute
-2025-04-08T17:01:22.300+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : info execute
-2025-04-08T17:01:22.300+09:00  WARN 11356 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : warn execute
-2025-04-08T17:01:22.301+09:00 ERROR 11356 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : error execute
-2025-04-08T17:02:12.754+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : info execute
-2025-04-08T17:02:12.754+09:00  WARN 11356 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : warn execute
-2025-04-08T17:02:12.754+09:00 ERROR 11356 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : error execute
-2025-04-08T17:02:14.413+09:00  INFO 11356 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : info execute
-2025-04-08T17:02:14.413+09:00  WARN 11356 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : warn execute
-2025-04-08T17:02:14.414+09:00 ERROR 11356 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : error execute
-2025-04-08T17:11:09.615+09:00  INFO 11356 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-08T17:11:09.729+09:00  INFO 11356 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-08T17:11:21.594+09:00  INFO 14936 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 14936 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
-2025-04-08T17:11:21.597+09:00  INFO 14936 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
-2025-04-08T17:11:21.655+09:00  INFO 14936 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-08T17:11:21.655+09:00  INFO 14936 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-08T17:11:22.908+09:00  INFO 14936 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-08T17:11:22.935+09:00  INFO 14936 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-08T17:11:22.937+09:00  INFO 14936 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-08T17:11:23.013+09:00  INFO 14936 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-08T17:11:23.014+09:00  INFO 14936 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1358 ms
-2025-04-08T17:11:23.520+09:00  INFO 14936 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-08T17:11:23.559+09:00  INFO 14936 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-08T17:11:23.567+09:00  INFO 14936 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.911 seconds (process running for 5.293)
-2025-04-08T17:11:28.619+09:00  INFO 14936 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-08T17:11:28.619+09:00  INFO 14936 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-08T17:11:28.620+09:00  INFO 14936 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-04-08T17:15:48.142+09:00  INFO 14936 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-08T17:15:48.247+09:00  INFO 14936 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-08T17:15:55.067+09:00  INFO 1504 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 1504 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
-2025-04-08T17:15:55.070+09:00  INFO 1504 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
-2025-04-08T17:15:55.139+09:00  INFO 1504 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-08T17:15:55.139+09:00  INFO 1504 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-08T17:15:56.521+09:00  INFO 1504 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-08T17:15:56.537+09:00  INFO 1504 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-08T17:15:56.538+09:00  INFO 1504 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-08T17:15:56.605+09:00  INFO 1504 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-08T17:15:56.606+09:00  INFO 1504 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1466 ms
-2025-04-08T17:15:57.207+09:00  INFO 1504 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-08T17:15:57.243+09:00  INFO 1504 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-08T17:15:57.252+09:00  INFO 1504 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 3.231 seconds (process running for 4.579)
-2025-04-08T17:16:20.837+09:00  INFO 1504 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-08T17:16:20.837+09:00  INFO 1504 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-08T17:16:20.838+09:00  INFO 1504 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-04-08T17:24:20.408+09:00  WARN 1504 --- [ex01] [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
-2025-04-08T17:24:31.874+09:00  INFO 1504 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-08T17:24:31.986+09:00  INFO 1504 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-08T17:24:41.103+09:00  INFO 11996 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 11996 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
-2025-04-08T17:24:41.105+09:00  INFO 11996 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
-2025-04-08T17:24:41.165+09:00  INFO 11996 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-08T17:24:41.165+09:00  INFO 11996 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-08T17:24:42.559+09:00  INFO 11996 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-08T17:24:42.584+09:00  INFO 11996 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-08T17:24:42.585+09:00  INFO 11996 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-08T17:24:42.658+09:00  INFO 11996 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-08T17:24:42.659+09:00  INFO 11996 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1494 ms
-2025-04-08T17:24:43.188+09:00  INFO 11996 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-08T17:24:43.234+09:00  INFO 11996 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-08T17:24:43.243+09:00  INFO 11996 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 3.264 seconds (process running for 6.009)
-2025-04-08T17:24:48.595+09:00  INFO 11996 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-08T17:24:48.598+09:00  INFO 11996 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-08T17:24:48.600+09:00  INFO 11996 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-04-08T17:26:03.471+09:00  INFO 11996 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-08T17:26:03.577+09:00  INFO 11996 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-08T17:26:11.639+09:00  INFO 4616 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 4616 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
-2025-04-08T17:26:11.645+09:00  INFO 4616 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
-2025-04-08T17:26:11.707+09:00  INFO 4616 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-08T17:26:11.708+09:00  INFO 4616 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-08T17:26:12.988+09:00  INFO 4616 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-08T17:26:13.009+09:00  INFO 4616 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-08T17:26:13.009+09:00  INFO 4616 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-08T17:26:13.082+09:00  INFO 4616 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-08T17:26:13.083+09:00  INFO 4616 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1374 ms
-2025-04-08T17:26:13.591+09:00  INFO 4616 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-08T17:26:13.627+09:00  INFO 4616 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-08T17:26:13.639+09:00  INFO 4616 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 3.206 seconds (process running for 5.396)
-2025-04-08T17:26:19.423+09:00  INFO 4616 --- [ex01] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-08T17:26:19.424+09:00  INFO 4616 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-04-08T17:26:19.426+09:00  INFO 4616 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-04-08T17:27:22.481+09:00  INFO 4616 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-08T17:27:22.596+09:00  INFO 4616 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-04-08T17:27:30.743+09:00  INFO 14488 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 14488 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
-2025-04-08T17:27:30.746+09:00  INFO 14488 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
-2025-04-08T17:27:30.806+09:00  INFO 14488 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-08T17:27:30.806+09:00  INFO 14488 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-08T17:27:32.196+09:00  INFO 14488 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-04-08T17:27:32.211+09:00  INFO 14488 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-08T17:27:32.212+09:00  INFO 14488 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-08T17:27:32.275+09:00  INFO 14488 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-08T17:27:32.276+09:00  INFO 14488 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1469 ms
-2025-04-08T17:27:32.755+09:00  INFO 14488 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-04-08T17:27:32.795+09:00  INFO 14488 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-04-08T17:27:32.804+09:00  INFO 14488 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 3.164 seconds (process running for 4.464)
+2025-04-09T09:52:31.181+09:00  INFO 708 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 708 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T09:52:31.183+09:00 DEBUG 708 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T09:52:31.184+09:00  INFO 708 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T09:52:31.236+09:00  INFO 708 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T09:52:31.236+09:00  INFO 708 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T09:52:32.337+09:00  INFO 708 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T09:52:32.355+09:00  INFO 708 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T09:52:32.356+09:00  INFO 708 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T09:52:32.413+09:00  INFO 708 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T09:52:32.414+09:00  INFO 708 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1176 ms
+2025-04-09T09:52:32.846+09:00  INFO 708 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T09:52:32.878+09:00  INFO 708 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T09:52:32.886+09:00  INFO 708 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.375 seconds (process running for 3.499)
+2025-04-09T09:53:24.814+09:00  INFO 708 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T09:53:24.815+09:00  INFO 708 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T09:53:24.816+09:00  INFO 708 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T09:53:24.944+09:00  INFO 708 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : modify id : aaa
+2025-04-09T09:53:24.945+09:00  INFO 708 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : modify dto : MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T09:59:01.736+09:00  WARN 708 --- [ex01] [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity com.example.ex01.controller.MemberController.memberUpdate(java.lang.String,com.example.ex01.dto.MemberDTO)]
+2025-04-09T09:59:07.334+09:00  WARN 708 --- [ex01] [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2025-04-09T09:59:13.578+09:00  INFO 708 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T09:59:13.666+09:00  INFO 708 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T09:59:19.136+09:00  INFO 2100 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 2100 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T09:59:19.138+09:00 DEBUG 2100 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T09:59:19.139+09:00  INFO 2100 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T09:59:19.194+09:00  INFO 2100 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T09:59:19.194+09:00  INFO 2100 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T09:59:20.282+09:00  INFO 2100 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T09:59:20.300+09:00  INFO 2100 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T09:59:20.301+09:00  INFO 2100 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T09:59:20.597+09:00  INFO 2100 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T09:59:20.598+09:00  INFO 2100 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1403 ms
+2025-04-09T09:59:20.994+09:00  INFO 2100 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T09:59:21.026+09:00  INFO 2100 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T09:59:21.034+09:00  INFO 2100 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.565 seconds (process running for 3.351)
+2025-04-09T09:59:26.723+09:00  INFO 2100 --- [ex01] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T09:59:26.723+09:00  INFO 2100 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T09:59:26.725+09:00  INFO 2100 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T09:59:26.771+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : 삭제 : aaa
+2025-04-09T09:59:50.322+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : debug execute
+2025-04-09T09:59:50.325+09:00  INFO 2100 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : info execute
+2025-04-09T09:59:50.326+09:00  WARN 2100 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : warn execute
+2025-04-09T09:59:50.326+09:00 ERROR 2100 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : error execute
+2025-04-09T10:13:39.950+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : dto 확인 MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T10:18:38.777+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : dto 확인 MemberDTO(username=bbb, password=bbb, role=USER)
+2025-04-09T10:41:53.645+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : dto 확인 MemberDTO(username=bbb, password=bbb, role=USER)
+2025-04-09T10:49:26.613+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-6] c.e.ex01.controller.MemberController     : 삭제 : aaa
+2025-04-09T10:49:31.904+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : 삭제 : ccc
+2025-04-09T10:49:37.977+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-8] c.e.ex01.controller.MemberController     : 삭제 : bbb
+2025-04-09T10:51:38.200+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-4] c.e.ex01.controller.MemberController     : dto 확인 MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T10:51:40.156+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : dto 확인 MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T10:51:43.525+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-6] c.e.ex01.controller.MemberController     : dto 확인 MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T10:51:57.005+09:00 DEBUG 2100 --- [ex01] [http-nio-8080-exec-8] c.e.ex01.controller.MemberController     : 삭제 : aaa
+2025-04-09T10:54:11.727+09:00  INFO 2100 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T10:54:11.809+09:00  INFO 2100 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T10:54:17.563+09:00  INFO 8788 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 8788 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T10:54:17.565+09:00 DEBUG 8788 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T10:54:17.566+09:00  INFO 8788 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T10:54:17.612+09:00  INFO 8788 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T10:54:17.612+09:00  INFO 8788 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T10:54:18.571+09:00  INFO 8788 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T10:54:18.588+09:00  INFO 8788 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T10:54:18.588+09:00  INFO 8788 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T10:54:18.638+09:00  INFO 8788 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T10:54:18.639+09:00  INFO 8788 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1026 ms
+2025-04-09T10:54:19.048+09:00  INFO 8788 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T10:54:19.083+09:00  INFO 8788 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T10:54:19.091+09:00  INFO 8788 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.05 seconds (process running for 3.783)
+2025-04-09T10:54:23.097+09:00  INFO 8788 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T10:54:23.098+09:00  INFO 8788 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T10:54:23.098+09:00  INFO 8788 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-09T10:54:23.216+09:00 DEBUG 8788 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : insert MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T10:54:29.614+09:00 DEBUG 8788 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : insert MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T10:55:43.364+09:00  INFO 8788 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T10:55:43.447+09:00  INFO 8788 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T10:55:47.277+09:00  INFO 1476 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 1476 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T10:55:47.279+09:00 DEBUG 1476 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T10:55:47.280+09:00  INFO 1476 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T10:55:47.326+09:00  INFO 1476 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T10:55:47.326+09:00  INFO 1476 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T10:55:48.258+09:00  INFO 1476 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T10:55:48.274+09:00  INFO 1476 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T10:55:48.274+09:00  INFO 1476 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T10:55:48.319+09:00  INFO 1476 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T10:55:48.320+09:00  INFO 1476 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 993 ms
+2025-04-09T10:55:48.706+09:00  INFO 1476 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T10:55:48.738+09:00  INFO 1476 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T10:55:48.747+09:00  INFO 1476 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 1.961 seconds (process running for 2.827)
+2025-04-09T11:00:40.334+09:00  INFO 1476 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T11:00:40.335+09:00  INFO 1476 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T11:00:40.336+09:00  INFO 1476 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T11:00:43.613+09:00  INFO 1476 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T11:00:43.691+09:00  INFO 1476 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T11:00:48.065+09:00  INFO 14736 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 14736 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T11:00:48.068+09:00 DEBUG 14736 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T11:00:48.068+09:00  INFO 14736 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T11:00:48.118+09:00  INFO 14736 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T11:00:48.118+09:00  INFO 14736 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T11:00:49.049+09:00  INFO 14736 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T11:00:49.063+09:00  INFO 14736 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T11:00:49.063+09:00  INFO 14736 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T11:00:49.110+09:00  INFO 14736 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T11:00:49.111+09:00  INFO 14736 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 992 ms
+2025-04-09T11:00:49.486+09:00  INFO 14736 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T11:00:49.516+09:00  INFO 14736 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T11:00:49.524+09:00  INFO 14736 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.023 seconds (process running for 3.034)
+2025-04-09T11:00:53.205+09:00  INFO 14736 --- [ex01] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T11:00:53.205+09:00  INFO 14736 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T11:00:53.206+09:00  INFO 14736 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T11:00:53.260+09:00  WARN 14736 --- [ex01] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity com.example.ex01.controller.MemberController.selectAll(com.example.ex01.dto.MemberDTO)]
+2025-04-09T11:00:56.020+09:00  WARN 14736 --- [ex01] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity com.example.ex01.controller.MemberController.selectAll(com.example.ex01.dto.MemberDTO)]
+2025-04-09T11:14:26.055+09:00  INFO 14736 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T11:14:26.139+09:00  INFO 14736 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T11:14:30.446+09:00  INFO 3920 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 3920 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T11:14:30.448+09:00 DEBUG 3920 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T11:14:30.449+09:00  INFO 3920 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T11:14:30.494+09:00  INFO 3920 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T11:14:30.494+09:00  INFO 3920 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T11:14:31.409+09:00  INFO 3920 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T11:14:31.426+09:00  INFO 3920 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T11:14:31.426+09:00  INFO 3920 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T11:14:31.475+09:00  INFO 3920 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T11:14:31.475+09:00  INFO 3920 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 980 ms
+2025-04-09T11:14:31.866+09:00  INFO 3920 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T11:14:31.900+09:00  INFO 3920 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T11:14:31.909+09:00  INFO 3920 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 1.971 seconds (process running for 2.633)
+2025-04-09T11:14:37.338+09:00  INFO 3920 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T11:14:37.338+09:00  INFO 3920 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T11:14:37.340+09:00  INFO 3920 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T11:14:45.528+09:00 DEBUG 3920 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : insert MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T11:14:57.625+09:00 DEBUG 3920 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : insert MemberDTO(username=bbb, password=bbb, role=USER)
+2025-04-09T11:15:02.306+09:00 DEBUG 3920 --- [ex01] [http-nio-8080-exec-6] c.e.ex01.controller.MemberController     : insert MemberDTO(username=ccc, password=ccc, role=USER)
+2025-04-09T11:15:03.412+09:00 DEBUG 3920 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : insert MemberDTO(username=ccc, password=ccc, role=USER)
+2025-04-09T11:17:16.605+09:00  INFO 3920 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : modify id : aaa
+2025-04-09T11:17:16.606+09:00  INFO 3920 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : modify dto : MemberDTO(username=aaa, password=abab, role=USER)
+2025-04-09T11:39:50.261+09:00  INFO 3920 --- [ex01] [http-nio-8080-exec-4] c.e.ex01.controller.MemberController     : modify id : aaa
+2025-04-09T11:39:50.261+09:00  INFO 3920 --- [ex01] [http-nio-8080-exec-4] c.e.ex01.controller.MemberController     : modify dto : MemberDTO(username=aaa, password=abab, role=USER)
+2025-04-09T11:46:00.061+09:00 DEBUG 3920 --- [ex01] [http-nio-8080-exec-9] c.e.ex01.controller.MemberController     : insert MemberDTO(username=ccc, password=ccc, role=USER)
+2025-04-09T11:46:18.771+09:00  INFO 3920 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T11:46:18.849+09:00  INFO 3920 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T11:46:22.746+09:00  INFO 1136 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 1136 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T11:46:22.748+09:00 DEBUG 1136 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T11:46:22.749+09:00  INFO 1136 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T11:46:22.795+09:00  INFO 1136 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T11:46:22.796+09:00  INFO 1136 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T11:46:23.722+09:00  INFO 1136 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T11:46:23.737+09:00  INFO 1136 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T11:46:23.737+09:00  INFO 1136 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T11:46:23.787+09:00  INFO 1136 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T11:46:23.787+09:00  INFO 1136 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 991 ms
+2025-04-09T11:46:24.162+09:00  INFO 1136 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T11:46:24.196+09:00  INFO 1136 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T11:46:24.205+09:00  INFO 1136 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 1.972 seconds (process running for 2.666)
+2025-04-09T11:46:31.655+09:00  INFO 1136 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T11:46:31.655+09:00  INFO 1136 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T11:46:31.656+09:00  INFO 1136 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T11:46:31.775+09:00 DEBUG 1136 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T11:46:31.777+09:00 DEBUG 1136 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T11:47:22.220+09:00 DEBUG 1136 --- [ex01] [http-nio-8080-exec-4] c.e.ex01.controller.MemberController     : insert MemberDTO(username=ccc, password=ccc, role=USER)
+2025-04-09T11:47:30.165+09:00 DEBUG 1136 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : insert MemberDTO(username=bbb, password=bbb, role=USER)
+2025-04-09T11:47:36.313+09:00 DEBUG 1136 --- [ex01] [http-nio-8080-exec-6] c.e.ex01.controller.MemberController     : insert MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T11:47:47.379+09:00 DEBUG 1136 --- [ex01] [http-nio-8080-exec-8] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=abab, role=USER)
+2025-04-09T11:47:47.380+09:00 DEBUG 1136 --- [ex01] [http-nio-8080-exec-8] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T11:50:27.896+09:00  INFO 1136 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T11:50:27.975+09:00  INFO 1136 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T11:51:29.471+09:00  INFO 8924 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 8924 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T11:51:29.473+09:00 DEBUG 8924 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T11:51:29.474+09:00  INFO 8924 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T11:51:29.526+09:00  INFO 8924 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T11:51:29.526+09:00  INFO 8924 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T11:51:30.480+09:00  INFO 8924 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T11:51:30.494+09:00  INFO 8924 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T11:51:30.494+09:00  INFO 8924 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T11:51:30.540+09:00  INFO 8924 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T11:51:30.541+09:00  INFO 8924 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1014 ms
+2025-04-09T11:51:30.929+09:00  INFO 8924 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T11:51:30.961+09:00  INFO 8924 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T11:51:30.970+09:00  INFO 8924 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.018 seconds (process running for 2.657)
+2025-04-09T11:51:48.836+09:00  INFO 8924 --- [ex01] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T11:51:48.837+09:00  INFO 8924 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T11:51:48.838+09:00  INFO 8924 --- [ex01] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-09T11:53:07.938+09:00  INFO 8924 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T11:53:08.015+09:00  INFO 8924 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T11:53:12.134+09:00  INFO 2832 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 2832 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T11:53:12.136+09:00 DEBUG 2832 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T11:53:12.137+09:00  INFO 2832 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T11:53:12.187+09:00  INFO 2832 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T11:53:12.187+09:00  INFO 2832 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T11:53:13.108+09:00  INFO 2832 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T11:53:13.122+09:00  INFO 2832 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T11:53:13.122+09:00  INFO 2832 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T11:53:13.167+09:00  INFO 2832 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T11:53:13.168+09:00  INFO 2832 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 980 ms
+2025-04-09T11:53:13.536+09:00  INFO 2832 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T11:53:13.567+09:00  INFO 2832 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T11:53:13.574+09:00  INFO 2832 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 1.965 seconds (process running for 3.007)
+2025-04-09T11:58:50.403+09:00  INFO 2832 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T11:58:50.404+09:00  INFO 2832 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T11:58:50.405+09:00  INFO 2832 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T11:58:54.704+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : insert MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T11:58:55.701+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-4] c.e.ex01.controller.MemberController     : insert MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T11:59:04.815+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : insert MemberDTO(username=bbb, password=bbb, role=USER)
+2025-04-09T11:59:13.751+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-6] c.e.ex01.controller.MemberController     : insert MemberDTO(username=ccc, password=ccc, role=USER)
+2025-04-09T11:59:37.782+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=aaa, role=CHANGE_ROLE)
+2025-04-09T11:59:37.783+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T11:59:47.695+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-9] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=aaa, role=CHANGE_ROLE)
+2025-04-09T11:59:47.696+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-9] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T11:59:51.508+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T11:59:51.508+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T11:59:56.026+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T11:59:56.026+09:00 DEBUG 2832 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T11:59:58.784+09:00  INFO 2832 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T11:59:58.866+09:00  INFO 2832 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T12:00:03.646+09:00  INFO 2740 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 2740 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T12:00:03.649+09:00 DEBUG 2740 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T12:00:03.649+09:00  INFO 2740 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T12:00:03.700+09:00  INFO 2740 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T12:00:03.700+09:00  INFO 2740 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T12:00:04.695+09:00  INFO 2740 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T12:00:04.710+09:00  INFO 2740 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T12:00:04.711+09:00  INFO 2740 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T12:00:04.760+09:00  INFO 2740 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T12:00:04.761+09:00  INFO 2740 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1061 ms
+2025-04-09T12:00:05.134+09:00  INFO 2740 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T12:00:05.168+09:00  INFO 2740 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T12:00:05.176+09:00  INFO 2740 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.064 seconds (process running for 3.407)
+2025-04-09T12:00:14.895+09:00  INFO 2740 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T12:00:14.895+09:00  INFO 2740 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T12:00:14.896+09:00  INFO 2740 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-09T12:00:18.729+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : insert MemberDTO(username=ccc, password=ccc, role=USER)
+2025-04-09T12:00:23.543+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-4] c.e.ex01.controller.MemberController     : insert MemberDTO(username=bbb, password=bbb, role=USER)
+2025-04-09T12:00:30.083+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : insert MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T12:00:35.466+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T12:00:35.466+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T12:00:47.877+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-8] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=aaa, role=CHANGE_ROLE)
+2025-04-09T12:00:47.878+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-8] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T12:01:00.596+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=abab, role=CHANGE_ROLE)
+2025-04-09T12:01:00.597+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T12:01:29.986+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : modify MemberDTO(username=ccc, password=abcabc, role=CHANGE_ROLE)
+2025-04-09T12:01:29.986+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T12:01:53.578+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-4] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=abab, role=CHANGE_ROLE)
+2025-04-09T12:01:53.579+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-4] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T12:02:09.967+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-6] c.e.ex01.controller.MemberController     : modify MemberDTO(username=ccc, password=abab, role=CHANGE_ROLE)
+2025-04-09T12:02:09.967+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-6] c.e.ex01.controller.MemberController     : modify aaa
+2025-04-09T12:02:13.928+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : modify MemberDTO(username=ccc, password=abab, role=CHANGE_ROLE)
+2025-04-09T12:02:13.928+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : modify ccc
+2025-04-09T12:02:38.536+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-9] c.e.ex01.controller.MemberController     : modify MemberDTO(username=aaa, password=abab, role=CHANGE_ROLE)
+2025-04-09T12:02:38.536+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-9] c.e.ex01.controller.MemberController     : modify ccc
+2025-04-09T12:02:57.025+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : modify MemberDTO(username=ccc, password=abcabc, role=CHANGE_ROLE)
+2025-04-09T12:02:57.025+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : modify ccc
+2025-04-09T12:03:27.215+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : modify MemberDTO(username=bbb, password=bcbc, role=CHANGE_ROLE)
+2025-04-09T12:03:27.216+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : modify bbb
+2025-04-09T12:07:58.602+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : modify MemberDTO(username=bbb, password=bcbc, role=CHANGE_ROLE)
+2025-04-09T12:07:58.602+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-7] c.e.ex01.controller.MemberController     : modify abc
+2025-04-09T12:08:24.745+09:00  WARN 2740 --- [ex01] [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries]
+2025-04-09T12:08:38.549+09:00  WARN 2740 --- [ex01] [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+2025-04-09T12:08:43.147+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : modify MemberDTO(username=bbb, password=bcbc, role=null)
+2025-04-09T12:08:43.147+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : modify bbb
+2025-04-09T12:13:24.133+09:00  WARN 2740 --- [ex01] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2025-04-09T12:13:32.398+09:00  WARN 2740 --- [ex01] [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2025-04-09T12:18:10.297+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : modify MemberDTO(username=bbb, password=bcbc, role=CHANGE_ROLE)
+2025-04-09T12:18:10.297+09:00 DEBUG 2740 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : modify abc
+2025-04-09T12:39:35.933+09:00  WARN 2740 --- [ex01] [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2025-04-09T12:40:21.176+09:00  WARN 2740 --- [ex01] [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2025-04-09T12:40:36.517+09:00  INFO 2740 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T12:40:36.596+09:00  INFO 2740 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T12:40:40.843+09:00  INFO 6864 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 6864 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T12:40:40.845+09:00 DEBUG 6864 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T12:40:40.846+09:00  INFO 6864 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T12:40:40.897+09:00  INFO 6864 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T12:40:40.897+09:00  INFO 6864 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T12:40:41.820+09:00  INFO 6864 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T12:40:41.836+09:00  INFO 6864 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T12:40:41.836+09:00  INFO 6864 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T12:40:41.883+09:00  INFO 6864 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T12:40:41.883+09:00  INFO 6864 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 985 ms
+2025-04-09T12:40:42.379+09:00  INFO 6864 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T12:40:42.412+09:00  INFO 6864 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T12:40:42.419+09:00  INFO 6864 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.094 seconds (process running for 2.807)
+2025-04-09T12:40:45.192+09:00  INFO 6864 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T12:40:45.192+09:00  INFO 6864 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T12:40:45.193+09:00  INFO 6864 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T12:40:48.683+09:00 DEBUG 6864 --- [ex01] [http-nio-8080-exec-3] c.e.ex01.controller.MemberController     : insert MemberDTO(username=bbb, password=aaa, role=USER)
+2025-04-09T12:40:59.455+09:00 DEBUG 6864 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : insert MemberDTO(username=ccc, password=aaa, role=USER)
+2025-04-09T12:41:03.799+09:00 DEBUG 6864 --- [ex01] [http-nio-8080-exec-6] c.e.ex01.controller.MemberController     : insert MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T12:42:03.627+09:00 DEBUG 6864 --- [ex01] [http-nio-8080-exec-9] c.e.ex01.controller.MemberController     : delete aaa
+2025-04-09T12:44:06.670+09:00  INFO 6864 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T12:44:06.750+09:00  INFO 6864 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T12:44:10.478+09:00  INFO 4776 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 4776 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T12:44:10.481+09:00 DEBUG 4776 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T12:44:10.481+09:00  INFO 4776 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T12:44:10.528+09:00  INFO 4776 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T12:44:10.528+09:00  INFO 4776 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T12:44:11.513+09:00  INFO 4776 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T12:44:11.529+09:00  INFO 4776 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T12:44:11.530+09:00  INFO 4776 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T12:44:11.580+09:00  INFO 4776 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T12:44:11.581+09:00  INFO 4776 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1052 ms
+2025-04-09T12:44:11.948+09:00  INFO 4776 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T12:44:11.982+09:00  INFO 4776 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T12:44:11.990+09:00  INFO 4776 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.084 seconds (process running for 2.702)
+2025-04-09T12:48:08.233+09:00  INFO 4776 --- [ex01] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T12:48:08.233+09:00  INFO 4776 --- [ex01] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T12:48:08.234+09:00  INFO 4776 --- [ex01] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-09T12:51:10.340+09:00  WARN 4776 --- [ex01] [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T12:51:10.366+09:00  WARN 4776 --- [ex01] [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T12:52:09.925+09:00  WARN 4776 --- [ex01] [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T12:52:09.934+09:00  WARN 4776 --- [ex01] [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T13:00:22.176+09:00  INFO 4776 --- [ex01] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-09T13:00:22.253+09:00  INFO 4776 --- [ex01] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-09T13:00:26.684+09:00  INFO 15688 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Starting Ex01Application using Java 17.0.13 with PID 15688 (C:\MyWs\11_spring_boot\ex01\build\classes\java\main started by hi in C:\MyWs\11_spring_boot\ex01)
+2025-04-09T13:00:26.686+09:00 DEBUG 15688 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Running with Spring Boot v3.4.4, Spring v6.2.5
+2025-04-09T13:00:26.687+09:00  INFO 15688 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : No active profile set, falling back to 1 default profile: "default"
+2025-04-09T13:00:26.745+09:00  INFO 15688 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-09T13:00:26.747+09:00  INFO 15688 --- [ex01] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-09T13:00:27.885+09:00  INFO 15688 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-09T13:00:27.904+09:00  INFO 15688 --- [ex01] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-09T13:00:27.904+09:00  INFO 15688 --- [ex01] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-09T13:00:27.963+09:00  INFO 15688 --- [ex01] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-09T13:00:27.964+09:00  INFO 15688 --- [ex01] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1215 ms
+2025-04-09T13:00:28.381+09:00  INFO 15688 --- [ex01] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-09T13:00:28.419+09:00  INFO 15688 --- [ex01] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-09T13:00:28.427+09:00  INFO 15688 --- [ex01] [restartedMain] com.example.ex01.Ex01Application         : Started Ex01Application in 2.405 seconds (process running for 3.45)
+2025-04-09T13:00:33.755+09:00  INFO 15688 --- [ex01] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-09T13:00:33.755+09:00  INFO 15688 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-09T13:00:33.756+09:00  INFO 15688 --- [ex01] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-09T13:00:33.782+09:00  WARN 15688 --- [ex01] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T13:00:33.886+09:00  WARN 15688 --- [ex01] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T13:00:39.724+09:00  WARN 15688 --- [ex01] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T13:00:39.731+09:00  WARN 15688 --- [ex01] [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T14:28:06.524+09:00  WARN 15688 --- [ex01] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T14:28:06.536+09:00  WARN 15688 --- [ex01] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2025-04-09T14:58:37.671+09:00 DEBUG 15688 --- [ex01] [http-nio-8080-exec-5] c.e.ex01.controller.MemberController     : insert MemberDTO(username=user01, password=pass01, role=USER)
+2025-04-09T15:01:29.881+09:00 DEBUG 15688 --- [ex01] [http-nio-8080-exec-1] c.e.ex01.controller.MemberController     : insert MemberDTO(username=user02, password=pass02, role=USER)
+2025-04-09T15:01:58.377+09:00 DEBUG 15688 --- [ex01] [http-nio-8080-exec-4] c.e.ex01.controller.MemberController     : insert MemberDTO(username=aaa, password=aaa, role=USER)
+2025-04-09T15:04:21.993+09:00 DEBUG 15688 --- [ex01] [http-nio-8080-exec-8] c.e.ex01.controller.MemberController     : insert MemberDTO(username=user01, password=pass01, role=USER)
+2025-04-09T15:05:24.065+09:00 DEBUG 15688 --- [ex01] [http-nio-8080-exec-10] c.e.ex01.controller.MemberController     : insert MemberDTO(username=user03, password=pass03, role=USER)
+2025-04-09T15:06:03.080+09:00 DEBUG 15688 --- [ex01] [http-nio-8080-exec-2] c.e.ex01.controller.MemberController     : insert MemberDTO(username=user01, password=pass01, role=USER)

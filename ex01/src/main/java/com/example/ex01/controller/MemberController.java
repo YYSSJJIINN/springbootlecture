@@ -1,7 +1,10 @@
 package com.example.ex01.controller;
 
 import com.example.ex01.dto.MemberDTO;
+import com.example.ex01.service.MemberService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +15,11 @@ import java.util.ArrayList;
 @RestController
 // 로그 찍는 어노테이션
 @Slf4j
+@RequiredArgsConstructor
 public class MemberController {
+
+    @Autowired
+    private final MemberService ms;
 
     @GetMapping("/")
     public void testLog() {
@@ -56,5 +63,80 @@ public class MemberController {
     public ResponseEntity memberInsert(@RequestBody MemberDTO dto) {
         log.debug("dto 확인 {}", dto);
         return ResponseEntity.status(HttpStatus.CREATED).body("저장 성공");
+    }
+
+    @PutMapping("/members/{id}")
+    public ResponseEntity memberUpdate(@PathVariable String id,
+                                        @RequestBody MemberDTO dto) {
+
+        log.info("modify id : {}", id);
+        log.info("modify dto : {}", dto);
+        // return으로 돌려줄 게 없을 때 사용하는 것이 build다.
+//        return ResponseEntity.noContent().build();
+        // 성공적으로 진행은 됐지만 돌아오는 게 없는 204번 코드가 NO_CONTENT
+        // ok에는 성공시 true가, 실패시 false가 들어온다.
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @DeleteMapping("/members/{id}")
+    public ResponseEntity memberDelete(@PathVariable String id) {
+        log.debug("삭제 : {}", id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    // 데이터 추가
+    @PostMapping("/mem")
+    public ResponseEntity insert(@RequestBody MemberDTO dto) {
+        log.debug("insert {}", dto);
+        int result = ms.insert(dto);
+        if(result == 1)
+            return ResponseEntity.status(HttpStatus.CREATED).body("추가 성공");
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("존재하는 id 임");
+    }
+
+    // 전체 데이터 조회
+    @GetMapping("/mem")
+    public ResponseEntity getList() {
+//        try {
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            }
+//            for( int i = 0; i < 5; i++) {
+//                log.debug("{}.back", i);
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    throw new RuntimeException(e);
+//                }
+//            }
+//        }
+        return ResponseEntity.status(HttpStatus.OK).body(ms.getList());
+    }
+
+    // 데이터 수정
+    @PutMapping("/mem/{id}")
+    public ResponseEntity update(@PathVariable("id") String id,
+                                    @RequestBody MemberDTO dto) {
+        log.debug("modify {}", dto);
+        log.debug("modify {}", id);
+        int result = ms.update(dto, id);
+        if(result == 1)
+            return ResponseEntity.status(HttpStatus.OK).body("수정 성공");
+        else if(result == 0)
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("해당하는 id가 존재하지 않습니다.");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("필수 항목이 없습니다.");
+    }
+
+    // 데이터 삭제
+    @DeleteMapping("/mem/{id}")
+    public ResponseEntity mDelete(@PathVariable String id) {
+        log.debug("delete {}", id);
+        int result = ms.mDelete(id);
+        if(result == 1)
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("해당하는 id가 존재하지 않습니다.");
+
     }
 }
