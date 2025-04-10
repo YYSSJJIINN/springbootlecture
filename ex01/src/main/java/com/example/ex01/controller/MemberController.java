@@ -161,4 +161,14 @@ public class MemberController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("비번틀림");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("id없음");
     }
+
+    // 개인정보 상세페이지
+    @GetMapping("/mem/{id}")
+    public ResponseEntity memOne(@PathVariable("id") String username) {
+        log.debug("받은 id {}", username);
+        MemberDTO dto = ms.getOne(username);
+        if(dto != null)
+            return ResponseEntity.ok( dto );
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
 }

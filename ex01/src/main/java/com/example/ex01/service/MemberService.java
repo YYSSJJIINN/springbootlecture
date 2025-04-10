@@ -49,4 +49,10 @@ public class MemberService {
         }
         return result;
     }
+
+    public MemberDTO getOne(String username) {
+        MemberDTO dto = null;
+        dto = ds.getOne(username);
+        return dto;
+    }
 }

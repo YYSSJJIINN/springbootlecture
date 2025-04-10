@@ -74,4 +74,13 @@ public class MemberDataSet {
         // 리턴값이 0으로 온다면 로그인에 성공한 것이다.
         return result;
     }
+
+    public MemberDTO getOne(String username) {
+        // dto라고 적힌부분은 변수라서 다른곳에선 d로 작성했더라도 상관없다
+        for(MemberDTO dto : DB) {
+            if(dto.getUsername().equals(username))
+                return dto;
+            }
+        return null;
+    }
 }
