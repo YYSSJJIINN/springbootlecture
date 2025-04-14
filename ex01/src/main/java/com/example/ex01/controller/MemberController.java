@@ -91,7 +91,7 @@ public class MemberController {
 
     // 전체 데이터 조회
     @GetMapping("/mem")
-    public ResponseEntity getList() {
+    public ResponseEntity getList(@RequestParam(defaultValue = "0") int start) {
 //        try {
 //            try {
 //                Thread.sleep(1000);
@@ -107,7 +107,7 @@ public class MemberController {
 //                }
 //            }
 //        }
-        return ResponseEntity.status(HttpStatus.OK).body(ms.getList());
+        return ResponseEntity.status(HttpStatus.OK).body(ms.getList(start));
     }
 
     // 데이터 수정
@@ -162,7 +162,10 @@ public class MemberController {
         log.debug("받은 id {}", username);
         MemberDTO dto = ms.getOne(username);
         if(dto != null)
-            return ResponseEntity.ok( dto );
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            // 이렇게 작성하면 상세페이지는 더미의 것이 보임
+//            return ResponseEntity.ok.body("성공");
+            // 이렇게 작성해야 상세페이지가 DB의 것으로 보임
+            return ResponseEntity.status(HttpStatus.OK).body(dto);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("해당 정보를 찾지 못하였습니다.");
     }
 }
