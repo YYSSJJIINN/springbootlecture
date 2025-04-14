@@ -30,6 +30,7 @@ public class MemberEntity {
         if(this.role == null)
             this.role = "USER";
     }
+
     public MemberEntity(MemberDTO dto){
         this.username = dto.getUsername();
         this.password = dto.getPassword();

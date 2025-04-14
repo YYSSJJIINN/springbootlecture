@@ -10,7 +10,6 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @ToString
-
 public class MemberDTO {
     private Long id;
     private String username;
@@ -18,7 +17,6 @@ public class MemberDTO {
     private String role;
 
     public MemberDTO(MemberEntity entity){
-
         this.id = entity.getId();
         this.username = entity.getUsername();
         this.password = entity.getPassword();
