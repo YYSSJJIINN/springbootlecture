@@ -36,12 +36,6 @@ public class MemberController {
         return ResponseEntity.ok("될까?");
     }
 
-//    @GetMapping("/test")
-//    public String test() {
-//        // 헤더라는 값을 수정할 수 있다.
-//        return "될까?";
-//    }
-
     @GetMapping("/members")
     public ResponseEntity memberAll() {
         ArrayList<MemberDTO> list = new ArrayList<>();
