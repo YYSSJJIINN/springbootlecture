@@ -7,7 +7,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -81,9 +83,11 @@ public class MemberController {
 
     // 데이터 추가
     @PostMapping("/mem")
-    public ResponseEntity insert(@RequestBody MemberDTO dto) {
+    // @RequestBody는 JSON타입으로 받아줄 때고
+    // @ModelAtrribute는 form-data로 받아줄 때 사용한다.
+    public ResponseEntity insert(@ModelAttribute MemberDTO dto, @RequestParam MultipartFile file) {
         log.debug("insert {}", dto);
-        int result = ms.insert(dto);
+        int result = ms.insert(dto, file);
         if(result == 1)
             return ResponseEntity.status(HttpStatus.CREATED).body("추가 성공");
         return ResponseEntity.status(HttpStatus.CONFLICT).body("존재하는 id 임");
@@ -91,7 +95,7 @@ public class MemberController {
 
     // 전체 데이터 조회
     @GetMapping("/mem")
-    public ResponseEntity getList(@RequestParam(defaultValue = "0") int start) {
+    public ResponseEntity getList(@RequestParam(value="start", defaultValue = "0") int start) {
 //        try {
 //            try {
 //                Thread.sleep(1000);
@@ -126,7 +130,10 @@ public class MemberController {
 
     // 데이터 삭제
     @DeleteMapping("/mem/{id}")
-    public ResponseEntity mDelete(@PathVariable String id) {
+    public ResponseEntity mDelete(@PathVariable String id,
+                                  Authentication authentication) {
+        if(!authentication.getName().equals(id))
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("사용자가 일치하지 않습니다.");
         log.debug("delete {}", id);
         int result = ms.mDelete(id);
         if(result == 1)
@@ -136,24 +143,27 @@ public class MemberController {
 
     @PostMapping("/mem/login1")
     public ResponseEntity login1(@RequestBody Map<String, String> map) {
-        log.debug("login map : {}", map);
-        int result = ms.login(map.get("username"), map.get("password"));
-        if( result == 0 )
-            return ResponseEntity.status(HttpStatus.OK).body("로그인이 성공했습니다.");
-        else if( result == 1 )
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("일치하지 않습니다.");
+//        log.debug("login map : {}", map);
+//        int result = ms.login(map.get("username"), map.get("password"));
+//        if( result == 0 )
+//            return ResponseEntity.status(HttpStatus.OK).body("로그인이 성공했습니다.");
+//        else if( result == 1 )
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("일치하지 않습니다.");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("존재하지 않는 id 입니다.");
     }
 
     @PostMapping("/mem/login")
     public ResponseEntity login(@ModelAttribute MemberDTO dto) {
         log.debug("login dto : {}", dto);
-        int result = ms.login(dto.getUsername(), dto.getPassword());
+//        int result = ms.login(dto.getUsername(), dto.getPassword());
+        // Service에 Map버전 로그인으로 변경함에 따라 추가
+        Map<String, Object> map = ms.login(dto.getUsername(), dto.getPassword());
+        int result = (Integer)map.get("result");
         if( result == 0 )
-            return ResponseEntity.status(HttpStatus.OK).body("성공");
+            return ResponseEntity.status(HttpStatus.OK).body(map);
         else if( result == 1)
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("비번틀림");
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("id없음");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(map);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(map);
     }
 
     // 개인정보 상세페이지

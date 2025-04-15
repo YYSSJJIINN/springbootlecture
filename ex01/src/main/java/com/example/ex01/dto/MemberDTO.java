@@ -14,10 +14,14 @@ public class MemberDTO {
     private String username;
     private String password;
     private String role;
+    private String fileName;
+    // originFileName
+    // changeFileName
 
     public MemberDTO(MemberEntity entity) {
         this.username = entity.getUsername();
         this.password = entity.getPassword();
         this.role = entity.getRole();
+        this.fileName = entity.getFileName();
     }
 }
