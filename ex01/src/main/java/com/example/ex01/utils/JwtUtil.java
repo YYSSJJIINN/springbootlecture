@@ -30,7 +30,7 @@ public class JwtUtil {
 
     public static String createJwt(String username, String secretKey, String role) {
         // 유효기간 1분
-        Long expiredMs = 1000 * 60l;
+        Long expiredMs = 1000 * 60l * 30;
         Claims claims = Jwts.claims();
         claims.put("username", username);
         // 이걸 작성함으로써 로그에 'authentication : ccc, ADMIN' username외에 role도 찍힌다.

@@ -5,6 +5,7 @@ import com.example.ex01.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -42,7 +43,7 @@ public class MemberController {
     public ResponseEntity memberAll() {
         ArrayList<MemberDTO> list = new ArrayList<>();
         for(int i = 0; i < 3; i++) {
-            MemberDTO dto = new MemberDTO("aaa" + i, "aaa" + i, "role" + i);
+            MemberDTO dto = new MemberDTO("aaa" + i, "aaa" + i, "role" + i, "nan");
             list.add(dto);
         }
         return ResponseEntity.ok().body(list);
@@ -51,7 +52,7 @@ public class MemberController {
     @GetMapping("/members/{id}")
     public ResponseEntity memberOne(@PathVariable String id) {
         log.debug("받은 id {}", id);
-        return ResponseEntity.ok(new MemberDTO("test", "test", "role"));
+        return ResponseEntity.ok(new MemberDTO("test", "test", "role", "nan"));
     }
 
     @PostMapping("/members")
@@ -85,7 +86,7 @@ public class MemberController {
     @PostMapping("/mem")
     // @RequestBody는 JSON타입으로 받아줄 때고
     // @ModelAtrribute는 form-data로 받아줄 때 사용한다.
-    public ResponseEntity insert(@ModelAttribute MemberDTO dto, @RequestParam MultipartFile file) {
+    public ResponseEntity insert(@ModelAttribute MemberDTO dto, @RequestParam(value="file") MultipartFile file) {
         log.debug("insert {}", dto);
         int result = ms.insert(dto, file);
         if(result == 1)
@@ -117,10 +118,11 @@ public class MemberController {
     // 데이터 수정
     @PutMapping("/mem/{id}")
     public ResponseEntity update(@PathVariable("id") String id,
-                                    @RequestBody MemberDTO dto) {
+                                    @RequestBody MemberDTO dto,
+                                 @RequestBody String fileName) {
         log.debug("modify {}", dto);
         log.debug("modify {}", id);
-        int result = ms.update(dto, id);
+        int result = ms.update(dto, id, fileName);
         if(result == 1)
             return ResponseEntity.status(HttpStatus.OK).body("수정 성공");
         else if(result == 0)
@@ -131,11 +133,12 @@ public class MemberController {
     // 데이터 삭제
     @DeleteMapping("/mem/{id}")
     public ResponseEntity mDelete(@PathVariable String id,
-                                  Authentication authentication) {
+                                  Authentication authentication,
+                                  @RequestBody String fileName) {
         if(!authentication.getName().equals(id))
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("사용자가 일치하지 않습니다.");
         log.debug("delete {}", id);
-        int result = ms.mDelete(id);
+        int result = ms.mDelete(id, fileName);
         if(result == 1)
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("해당하는 id가 존재하지 않습니다.");
@@ -177,5 +180,13 @@ public class MemberController {
             // 이렇게 작성해야 상세페이지가 DB의 것으로 보임
             return ResponseEntity.status(HttpStatus.OK).body(dto);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("해당 정보를 찾지 못하였습니다.");
+    }
+
+    @GetMapping("/mem/{fileName}/image")
+    public ResponseEntity getImage(@PathVariable(value="fileName") String fileName) {
+        byte[] imageByte = ms.getImage(fileName);
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_TYPE, "image/jpeg")
+                .body(imageByte);
     }
 }

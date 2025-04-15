@@ -36,6 +36,7 @@ public class WebSecurityConfig {
                 // 특정 경로에 대한 요청을 허용하겠다
                 .requestMatchers("/mem/login").permitAll()
                 .requestMatchers(HttpMethod.GET, "/mem").permitAll()
+                .requestMatchers(HttpMethod.GET, "/mem/{fileName}/image").permitAll()
                 .requestMatchers(HttpMethod.POST, "/mem").permitAll()
                 // ADMIN이 아니라면 허용하지 않아도 된다.
                 .requestMatchers("/admin/**").hasRole("ADMIN")

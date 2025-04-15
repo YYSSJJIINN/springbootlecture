@@ -17,10 +17,8 @@ import org.springframework.stereotype.Service;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 import com.example.ex01.utils.JwtUtil;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -50,13 +48,23 @@ public class MemberService {
             if(file.isEmpty()) {
                 fileName = "nan";
             } else {
-                fileName = file.getOriginalFilename();
+                // 실제 파일 이름으로 저장하겠다~
+                // 이러면 같은 이름의 파일 업로드 시 덮어씌워짐
+//                fileName = file.getOriginalFilename();
+                // 랜덤한 새로운 이름으로 파일을 저장하겠다~
+                fileName = UUID.randomUUID().toString() + "-" + file.getOriginalFilename();
             }
+            dto.setFileName(fileName);
             repo.save(new MemberEntity(dto));
             result = 1;
 
             Path path = Paths.get(DIR + fileName);
             Files.createDirectories(path.getParent());
+
+            // 해당하는 위치에 파일이 존재하면
+            if(!file.isEmpty())
+                // 이미지를 추가해라
+                file.transferTo(path);
         } catch (Exception e) {
 //            throw new RuntimeException(e);
             e.printStackTrace();
@@ -99,7 +107,13 @@ public class MemberService {
         return map;
     }
 
-    public int update(MemberDTO dto, String id) {
+    public int update(MemberDTO dto, String id, String fileName) {
+        /*수정:
+        * 사용자가 파일을 선택했다면
+        * 기본 파일 삭제 후 새로운 파일 저장
+        * 선택하지 않았다면 기존파일 그냥 두면 됨
+        * */
+
         if(dto.getUsername() == null || dto.getPassword() == null || dto.getRole() == null)
             return -1;
 //        // 더미버전
@@ -109,13 +123,14 @@ public class MemberService {
             // 수정 가능한 항목만 입력한다.
             entity.setPassword(dto.getPassword());
             entity.setRole(dto.getRole());
+            entity.setFileName(fileName);
             repo.save(entity);
             return 1;
         }
         return 0;
     }
 
-    public int mDelete(String id) {
+    public int mDelete(String id, String fileName) {
 //        int result = 0;
 //        result = ds.delete(id);
 //        return ds.getList().remove(id) ? 1 : 0;
@@ -127,6 +142,14 @@ public class MemberService {
         MemberEntity entity = repo.findByUsername(id);
         if(entity != null) {
             repo.delete(entity);
+            try {
+                Path path = Paths.get(DIR + fileName);
+                // 해당 위치에 파일이 존재하면 삭제해라.
+                Files.deleteIfExists(path);
+            } catch (Exception e) {
+//                throw new RuntimeException(e);
+                e.printStackTrace();
+            }
             return 1;
         }
         return 0;
@@ -177,5 +200,17 @@ public Map<String, Object> login( String username, String password ){
 //        dto = ds.getOne(username);
 //        return dto;
         return new MemberDTO(repo.findByUsername(username));
+    }
+
+    public byte[] getImage(String fileName) {
+
+        Path filePath = Paths.get(DIR + fileName);
+        byte[] imageBytes = {0};
+        try {
+            imageBytes = Files.readAllBytes(filePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return imageBytes;
     }
 }
